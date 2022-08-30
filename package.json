@@ -12,13 +12,13 @@
     "format": "prettier --write \"**/*.{js,ts,tsx}\""
   },
   "dependencies": {
-    "@emotion/react": "11.10.0",
-    "@emotion/styled": "11.10.0",
+    "@emotion/react": "11.10.4",
+    "@emotion/styled": "11.10.4",
     "@fontsource/roboto": "4.5.8",
-    "@mui/icons-material": "5.8.4",
-    "@mui/material": "5.10.1",
-    "@react-three/drei": "9.23.1",
-    "@react-three/fiber": "8.5.0",
+    "@mui/icons-material": "5.10.3",
+    "@mui/material": "5.10.3",
+    "@react-three/drei": "9.25.2",
+    "@react-three/fiber": "8.6.0",
     "axios": "0.27.2",
     "next": "12.2.5",
     "react": "18.2.0",
@@ -31,15 +31,15 @@
     "@types/node": "18.6.1",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
-    "@types/three": "0.143.1",
-    "@typescript-eslint/eslint-plugin": "5.33.1",
+    "@types/three": "0.143.2",
+    "@typescript-eslint/eslint-plugin": "5.36.1",
     "@typescript-eslint/parser": "5.36.1",
-    "eslint": "8.22.0",
+    "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.2.1",
     "prettier": "2.7.1",
-    "typescript": "4.7.4"
+    "typescript": "4.8.2"
   },
   "packageManager": "yarn@3.2.3"
 }
