@@ -21,7 +21,7 @@ function ThemeProvider({ children }: React.PropsWithChildren) {
           palette: {
             mode: prefersLightMode ? 'light' : 'dark',
             primary: {
-              main: '#A91079',
+              main: '#3F14C5',
             },
           },
         }),
