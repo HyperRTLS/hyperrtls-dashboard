@@ -50,7 +50,6 @@ interface ISystemInfo {
   health: {
     dynsec: boolean;
     gateway: boolean;
-    prisma: boolean;
   };
   info: {
     osInfo: {
@@ -87,7 +86,6 @@ function System() {
   const healthStatusItems = [
     { name: 'Dynamic Security', healthy: data.health.dynsec },
     { name: 'MQTT Gateway', healthy: data.health.gateway },
-    { name: 'Prisma', healthy: data.health.prisma },
   ];
 
   const platformInfoItems = [
