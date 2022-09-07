@@ -1,8 +1,8 @@
 import React from 'react';
 
-import * as THREE from 'three';
+import { Vector3 } from 'three';
 
-const arrowAnchorPoint = new THREE.Vector3(0, 0, 0);
+const arrowAnchorPoint = new Vector3(0, 0, 0);
 const arrowLength = 3;
 const arrowHeadLength = 0.2;
 
@@ -11,7 +11,7 @@ function AxesHelper() {
     <>
       <arrowHelper
         args={[
-          new THREE.Vector3(1, 0, 0),
+          new Vector3(1, 0, 0),
           arrowAnchorPoint,
           arrowLength,
           0xff0000,
@@ -21,7 +21,7 @@ function AxesHelper() {
 
       <arrowHelper
         args={[
-          new THREE.Vector3(0, 1, 0),
+          new Vector3(0, 1, 0),
           arrowAnchorPoint,
           arrowLength,
           0x00ff00,
@@ -31,7 +31,7 @@ function AxesHelper() {
 
       <arrowHelper
         args={[
-          new THREE.Vector3(0, 0, 1),
+          new Vector3(0, 0, 1),
           arrowAnchorPoint,
           arrowLength,
           0x0000ff,
