@@ -1,6 +1,8 @@
 import React from 'react';
 
+import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
+import Head from 'next/head';
 
 import SWRProvider from '../components/SWRProvider';
 import ThemeProvider from '../components/ThemeProvider';
@@ -12,9 +14,16 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 import '../styles/globals.css';
-import Head from 'next/head';
 
-function App({ Component, pageProps }: AppProps) {
+export type NextPageWithTitle<P = unknown, IP = P> = NextPage<P, IP> & {
+  title: string;
+};
+
+type AppPropsWithTitle = AppProps & {
+  Component: NextPageWithTitle;
+};
+
+function App({ Component, pageProps }: AppPropsWithTitle) {
   return (
     <>
       <Head>
@@ -24,9 +33,16 @@ function App({ Component, pageProps }: AppProps) {
           media="(prefers-color-scheme: light)"
         ></meta>
         <meta
+          name="theme-color"
+          content="#121212"
+          media="(prefers-color-scheme: dark)"
+        ></meta>
+        <meta
           name="viewport"
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         ></meta>
+
+        <title>{`${Component.title} | HyperRTLS`}</title>
       </Head>
 
       <SWRProvider>
