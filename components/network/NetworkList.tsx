@@ -13,7 +13,7 @@ function NetworkList({ items }: NetworkListProps) {
   return (
     <List>
       {items.map((item) => (
-        <NetworkListItem key={item.id} {...item} />
+        <NetworkListItem key={item.deviceId} {...item} />
       ))}
     </List>
   );

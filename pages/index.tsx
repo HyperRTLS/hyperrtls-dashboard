@@ -1,9 +1,11 @@
 import React from 'react';
 
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, Sphere } from '@react-three/drei';
 
-import { Box, styled } from '@mui/material';
+import useSWRImmutable from 'swr/immutable';
+
+import { Alert, Box, LinearProgress, styled } from '@mui/material';
 
 import type { NextPageWithTitle } from './_app';
 
@@ -36,9 +38,86 @@ const CanvasOverlayContainer = styled(Box)(({ theme }) => ({
   },
 }));
 
+type TagPosition = {
+  id: string;
+  x: number;
+  y: number;
+  z: number;
+};
+
+type Tag = {
+  id: string;
+  name: string;
+  positions: Array<TagPosition>;
+};
+
+const sseUrl = new URL(
+  'network/events?deviceTypes=tag&eventTypes=location',
+  process.env.NEXT_PUBLIC_API_BASE_URL || '',
+).href;
+
 const HomePage: NextPageWithTitle = () => {
+  const {
+    data: devices,
+    error,
+    mutate,
+  } = useSWRImmutable<Tag[]>('/devices/tags');
+
+  const onLocationEvent = React.useCallback((event: MessageEvent) => {
+    return;
+  }, []);
+
+  // const onLocationEvent = React.useCallback(
+  //   (event: MessageEvent) => {
+  //     if (!devices) return;
+
+  //     const { deviceType, deviceId, x, y, z } = JSON.parse(
+  //       event.data,
+  //     ) as TagLocationEventData;
+
+  //     const deviceIndex = devices.findIndex(
+  //       (device) =>
+  //         device.deviceType === deviceType && device.deviceId === deviceId,
+  //     );
+
+  //     if (deviceIndex === -1) return;
+
+  //     const newDevicesArray = [
+  //       ...devices.slice(0, deviceIndex),
+  //       {
+  //         ...devices[deviceIndex],
+  //         location: [x, y, z] as [number, number, number],
+  //       },
+  //       ...devices.slice(deviceIndex + 1),
+  //     ];
+
+  //     mutate(newDevicesArray, { revalidate: false });
+  //   },
+  //   [devices, mutate],
+  // );
+
+  React.useEffect(() => {
+    const eventSource = new EventSource(sseUrl);
+    eventSource.addEventListener('location', onLocationEvent);
+
+    return () => {
+      eventSource.removeEventListener('location', onLocationEvent);
+      eventSource.close();
+    };
+  }, [onLocationEvent]);
+
   const pageContainerRef = React.useRef<HTMLElement>(null);
   const statsContainerRef = React.useRef<HTMLElement>(null);
+
+  if (!devices && error) {
+    return (
+      <Alert severity="error">Could not fetch network&apos;s devices</Alert>
+    );
+  }
+
+  if (!devices) {
+    return <LinearProgress />;
+  }
 
   return (
     <PageContainer ref={pageContainerRef}>
@@ -48,6 +127,20 @@ const HomePage: NextPageWithTitle = () => {
           <Stats parent={statsContainerRef} />
           <AxesHelper />
           <gridHelper args={[100, 100]} />
+
+          {devices.map((device) => (
+            <Sphere
+              key={device.id}
+              position={[
+                device.positions[0].x,
+                device.positions[0].y,
+                device.positions[0].z,
+              ]}
+              args={[0.1]}
+            >
+              <meshBasicMaterial color="hotpink" />
+            </Sphere>
+          ))}
         </Canvas>
       </CanvasContainer>
 
