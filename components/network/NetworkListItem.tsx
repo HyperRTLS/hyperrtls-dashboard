@@ -16,12 +16,16 @@ import {
 } from '@mui/icons-material';
 
 export type NetworkListItemProps = {
-  name: string;
-  id: string;
+  deviceName: string;
+  deviceId: string;
   lastSeen: number;
 };
 
-function NetworkListItem({ name, id, lastSeen }: NetworkListItemProps) {
+function NetworkListItem({
+  deviceName,
+  deviceId,
+  lastSeen,
+}: NetworkListItemProps) {
   const [date, setDate] = React.useState(new Date());
 
   // Refresh tooltip and status indicator every second
@@ -44,7 +48,7 @@ function NetworkListItem({ name, id, lastSeen }: NetworkListItemProps) {
             <CircleIcon fontSize="small" color={statusColor} />
           </Tooltip>
         </ListItemIcon>
-        <ListItemText primary={name} secondary={id} />
+        <ListItemText primary={deviceName} secondary={deviceId} />
         <ChevronRightIcon />
       </ListItemButton>
     </ListItem>

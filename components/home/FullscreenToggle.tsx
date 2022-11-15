@@ -1,6 +1,6 @@
 import React from 'react';
 
-import useFullscreen from '../../utils/useFullscreen';
+import useFullscreen from '../../hooks/useFullscreen';
 
 import { Box, IconButton, styled } from '@mui/material';
 

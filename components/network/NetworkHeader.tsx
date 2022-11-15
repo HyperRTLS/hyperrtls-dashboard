@@ -1,6 +1,6 @@
 import { Box, Tabs, Tab, styled } from '@mui/material';
 
-import type { NetworkDeviceType } from '../../pages/network';
+import type { DeviceType } from '../../pages/network';
 
 const NetworkHeaderContainer = styled(Box)(({ theme }) => ({
   boxShadow: `inset 0 -2px 0 0 ${theme.palette.divider}`,
@@ -15,11 +15,8 @@ const NetworkHeaderTabs = styled(Tabs)(({ theme }) => ({
 }));
 
 export type NetworkHeaderProps = {
-  currentTab: NetworkDeviceType;
-  handleTabChange: (
-    _event: React.SyntheticEvent,
-    newTab: NetworkDeviceType,
-  ) => void;
+  currentTab: DeviceType;
+  handleTabChange: (_event: React.SyntheticEvent, newTab: DeviceType) => void;
 };
 
 function NetworkHeader({ currentTab, handleTabChange }: NetworkHeaderProps) {
@@ -31,9 +28,9 @@ function NetworkHeader({ currentTab, handleTabChange }: NetworkHeaderProps) {
         textColor="inherit"
         aria-label="select device type"
       >
-        <Tab value="tags" label="Tags" />
-        <Tab value="anchors" label="Anchors" />
-        <Tab value="gateways" label="Gateways" />
+        <Tab value="tag" label="Tags" />
+        <Tab value="anchor" label="Anchors" />
+        <Tab value="gateway" label="Gateways" />
       </NetworkHeaderTabs>
     </NetworkHeaderContainer>
   );
