@@ -69,7 +69,7 @@ function RoomMesh() {
   React.useLayoutEffect(() => {
     scene.traverse((obj) => {
       if (obj.type === 'Mesh')
-        applyProps(obj as any, {
+        applyProps(obj, {
           castShadow: true,
           receiveShadow: true,
           'material-envMapIntensity': 0.3,
@@ -157,9 +157,17 @@ const HomePage: NextPageWithTitle = () => {
           <gridHelper args={[100, 100]} />
 
           <Stage
-            shadows
+            shadows={{
+              type: 'contact',
+              size: 2048,
+            }}
             intensity={0.5}
             environment="apartment"
+            preset={{
+              main: [1, 3, 1],
+              fill: [-2, -0.5, -2],
+            }}
+            adjustCamera
           >
             <RoomMesh />
           </Stage>
