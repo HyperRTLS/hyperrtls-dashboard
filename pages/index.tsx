@@ -1,7 +1,13 @@
 import React from 'react';
 
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Sphere } from '@react-three/drei';
+import { applyProps, Canvas } from '@react-three/fiber';
+import {
+  OrbitControls,
+  Sphere,
+  useGLTF,
+  Stage,
+  useHelper,
+} from '@react-three/drei';
 
 import useSWRImmutable from 'swr/immutable';
 
@@ -12,6 +18,7 @@ import type { NextPageWithTitle } from './_app';
 import Stats, { StatsContainer } from '../components/home/Stats';
 import AxesHelper from '../components/home/AxesHelper';
 import FullscreenToggle from '../components/home/FullscreenToggle';
+import { BoxHelper } from 'three';
 
 const PageContainer = styled(Box)(({ theme }) => ({
   position: 'relative',
@@ -38,34 +45,51 @@ const CanvasOverlayContainer = styled(Box)(({ theme }) => ({
   },
 }));
 
-type TagPosition = {
-  id: string;
-  x: number;
-  y: number;
-  z: number;
-};
+// type TagPosition = {
+//   id: string;
+//   x: number;
+//   y: number;
+//   z: number;
+// };
 
-type Tag = {
-  id: string;
-  name: string;
-  positions: Array<TagPosition>;
-};
+// type Tag = {
+//   id: string;
+//   name: string;
+//   positions: Array<TagPosition>;
+// };
 
-const sseUrl = new URL(
-  'network/events?deviceTypes=tag&eventTypes=location',
-  process.env.NEXT_PUBLIC_API_BASE_URL || '',
-).href;
+// const sseUrl = new URL(
+//   'network/events?deviceTypes=tag&eventTypes=location',
+//   process.env.NEXT_PUBLIC_API_BASE_URL || '',
+// ).href;
+
+function RoomMesh() {
+  const { scene } = useGLTF('../room.glb', true);
+
+  React.useLayoutEffect(() => {
+    scene.traverse((obj) => {
+      if (obj.type === 'Mesh')
+        applyProps(obj as any, {
+          castShadow: true,
+          receiveShadow: true,
+          'material-envMapIntensity': 0.3,
+        });
+    });
+  }, [scene]);
+
+  return <primitive object={scene} />;
+}
 
 const HomePage: NextPageWithTitle = () => {
-  const {
-    data: devices,
-    error,
-    mutate,
-  } = useSWRImmutable<Tag[]>('/devices/tags');
+  // const {
+  //   data: devices,
+  //   error,
+  //   mutate,
+  // } = useSWRImmutable<Tag[]>('/devices/tags');
 
-  const onLocationEvent = React.useCallback((event: MessageEvent) => {
-    return;
-  }, []);
+  // const onLocationEvent = React.useCallback((event: MessageEvent) => {
+  //   return;
+  // }, []);
 
   // const onLocationEvent = React.useCallback(
   //   (event: MessageEvent) => {
@@ -96,39 +120,52 @@ const HomePage: NextPageWithTitle = () => {
   //   [devices, mutate],
   // );
 
-  React.useEffect(() => {
-    const eventSource = new EventSource(sseUrl);
-    eventSource.addEventListener('location', onLocationEvent);
+  // React.useEffect(() => {
+  //   const eventSource = new EventSource(sseUrl);
+  //   eventSource.addEventListener('location', onLocationEvent);
 
-    return () => {
-      eventSource.removeEventListener('location', onLocationEvent);
-      eventSource.close();
-    };
-  }, [onLocationEvent]);
+  //   return () => {
+  //     eventSource.removeEventListener('location', onLocationEvent);
+  //     eventSource.close();
+  //   };
+  // }, [onLocationEvent]);
 
   const pageContainerRef = React.useRef<HTMLElement>(null);
   const statsContainerRef = React.useRef<HTMLElement>(null);
 
-  if (!devices && error) {
-    return (
-      <Alert severity="error">Could not fetch network&apos;s devices</Alert>
-    );
-  }
+  // if (!devices && error) {
+  //   return (
+  //     <Alert severity="error">Could not fetch network&apos;s devices</Alert>
+  //   );
+  // }
 
-  if (!devices) {
-    return <LinearProgress />;
-  }
+  // if (!devices) {
+  //   return <LinearProgress />;
+  // }
 
   return (
     <PageContainer ref={pageContainerRef}>
       <CanvasContainer>
-        <Canvas camera={{ position: [5, 5, 5], fov: 50 }} frameloop="demand">
+        <Canvas
+          camera={{ position: [5, 5, 5], fov: 50 }}
+          frameloop="demand"
+          shadows
+        >
           <OrbitControls makeDefault />
           <Stats parent={statsContainerRef} />
           <AxesHelper />
           <gridHelper args={[100, 100]} />
 
-          {devices.map((device) => (
+          <Stage
+            shadows
+            shadowBias={-0.002}
+            intensity={0.5}
+            environment="apartment"
+          >
+            <RoomMesh />
+          </Stage>
+
+          {/* {devices.map((device) => (
             <Sphere
               key={device.id}
               position={[
@@ -140,7 +177,7 @@ const HomePage: NextPageWithTitle = () => {
             >
               <meshBasicMaterial color="hotpink" />
             </Sphere>
-          ))}
+          ))} */}
         </Canvas>
       </CanvasContainer>
 
