@@ -158,7 +158,6 @@ const HomePage: NextPageWithTitle = () => {
 
           <Stage
             shadows
-            shadowBias={-0.002}
             intensity={0.5}
             environment="apartment"
           >
