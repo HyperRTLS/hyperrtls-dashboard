@@ -12,35 +12,35 @@
     "format": "prettier --write \"**/*.{js,ts,tsx}\""
   },
   "dependencies": {
-    "@emotion/react": "11.10.4",
-    "@emotion/styled": "11.10.4",
+    "@emotion/react": "11.10.5",
+    "@emotion/styled": "11.10.5",
     "@fontsource/roboto": "4.5.8",
-    "@mui/icons-material": "5.10.3",
-    "@mui/material": "5.10.4",
-    "@react-three/drei": "9.28.3",
-    "@react-three/fiber": "8.7.2",
+    "@mui/icons-material": "5.10.16",
+    "@mui/material": "5.10.16",
+    "@react-three/drei": "9.45.1",
+    "@react-three/fiber": "8.9.1",
     "axios": "0.27.2",
-    "date-fns": "2.29.2",
-    "next": "12.2.5",
+    "date-fns": "2.29.3",
+    "next": "12.3.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "swr": "1.3.0",
-    "three": "0.144.0"
+    "three": "0.146.0"
   },
   "devDependencies": {
-    "@types/lodash": "4.14.184",
-    "@types/node": "18.6.1",
-    "@types/react": "18.0.18",
-    "@types/react-dom": "18.0.6",
-    "@types/three": "0.144.0",
-    "@typescript-eslint/eslint-plugin": "5.36.2",
-    "@typescript-eslint/parser": "5.36.2",
-    "eslint": "8.23.0",
-    "eslint-config-next": "12.2.5",
+    "@types/lodash": "4.14.190",
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
+    "@types/three": "0.146.0",
+    "@typescript-eslint/eslint-plugin": "5.45.0",
+    "@typescript-eslint/parser": "5.45.0",
+    "eslint": "8.28.0",
+    "eslint-config-next": "12.3.4",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.2.1",
-    "prettier": "2.7.1",
-    "typescript": "4.8.2"
+    "prettier": "2.8.0",
+    "typescript": "4.9.3"
   },
-  "packageManager": "yarn@3.2.3"
+  "packageManager": "yarn@3.3.0"
 }
