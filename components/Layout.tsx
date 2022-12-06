@@ -17,7 +17,7 @@ const LayoutContainer = styled(Box)(({ theme }) => ({
 function Layout({ children }: PropsWithChildren) {
   return (
     <LayoutContainer>
-      <Nav />
+      {/* <Nav /> */}
 
       {children}
     </LayoutContainer>
