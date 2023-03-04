@@ -725,9 +725,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-three/drei@npm:9.45.1":
-  version: 9.45.1
-  resolution: "@react-three/drei@npm:9.45.1"
+"@react-three/drei@npm:^9.46.1":
+  version: 9.46.1
+  resolution: "@react-three/drei@npm:9.46.1"
   dependencies:
     "@babel/runtime": ^7.11.2
     "@react-spring/three": ^9.3.1
@@ -755,7 +755,7 @@ __metadata:
   peerDependenciesMeta:
     react-dom:
       optional: true
-  checksum: ac3f7b5412f68922b346b58d1a04d743d690308e59d012b60ac705c27c23670f7f5e4f4cb2c0daf10099b3973882a6639cafc1af17d1f9284dc2d0c8e393613d
+  checksum: 90f459c0eff7255ae5221c66f054dc6a713ae9e7c4a276dd4df061173c9f66f5d1f64c314d3fbf588a379bbf9bf46f98f80a1c82a5a26e118b35c9ee788154b8
   languageName: node
   linkType: hard
 
@@ -2460,7 +2460,7 @@ __metadata:
     "@fontsource/roboto": 4.5.8
     "@mui/icons-material": 5.10.16
     "@mui/material": 5.10.16
-    "@react-three/drei": 9.45.1
+    "@react-three/drei": ^9.46.1
     "@react-three/fiber": 8.9.1
     "@types/lodash": 4.14.190
     "@types/node": 18.11.9
