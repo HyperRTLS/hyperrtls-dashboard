@@ -725,7 +725,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-three/drei@npm:^9.46.1":
+"@react-three/drei@npm:9.46.1":
   version: 9.46.1
   resolution: "@react-three/drei@npm:9.46.1"
   dependencies:
@@ -2460,7 +2460,7 @@ __metadata:
     "@fontsource/roboto": 4.5.8
     "@mui/icons-material": 5.10.16
     "@mui/material": 5.10.16
-    "@react-three/drei": ^9.46.1
+    "@react-three/drei": 9.46.1
     "@react-three/fiber": 8.9.1
     "@types/lodash": 4.14.190
     "@types/node": 18.11.9
