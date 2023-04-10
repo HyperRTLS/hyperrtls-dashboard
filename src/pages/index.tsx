@@ -73,11 +73,15 @@ export async function getServerSideProps() {
     new URL('/devices/tags', process.env.NEXT_PUBLIC_API_BASE_URL || ''),
   ).then<TagsResponse>((res) => res.json());
 
-  const transformedTags: Tags = tags.map((tag) => ({
-    ...tag,
-    positions: null,
-    position: tag.positions.at(0)?.position,
-  }));
+  const transformedTags: Tags = tags.map((tag) => {
+    const position = tag.positions.at(0)?.position;
+
+    return {
+      id: tag.id,
+      name: tag.name,
+      ...(position && { position }),
+    };
+  });
 
   return { props: { anchors, tags: transformedTags } as HomeProps };
 }
