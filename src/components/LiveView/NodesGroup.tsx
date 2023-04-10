@@ -18,18 +18,18 @@ const NodesGroup = React.forwardRef<Group, NodesGroupProps>(
         {anchors.map((anchor) => (
           <Node
             key={anchor.id}
-            name={anchor.name}
+            name={`[ANCHOR] ${anchor.name}`}
             position={anchor.position}
-            color="yellow"
+            color="#C576F6"
           />
         ))}
 
         {tags.map((tag) => (
           <Node
             key={tag.id}
-            name={tag.name}
+            name={`[TAG] ${tag.name}`}
             position={tag.position}
-            color="hotpink"
+            color="#89cff0"
           />
         ))}
       </group>
