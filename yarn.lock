@@ -122,7 +122,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/cache@npm:^11.10.5, @emotion/cache@npm:^11.10.7":
+"@emotion/cache@npm:11.10.7, @emotion/cache@npm:^11.10.5":
   version: 11.10.7
   resolution: "@emotion/cache@npm:11.10.7"
   dependencies:
@@ -158,7 +158,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/react@npm:^11.10.6":
+"@emotion/react@npm:11.10.6":
   version: 11.10.6
   resolution: "@emotion/react@npm:11.10.6"
   dependencies:
@@ -192,7 +192,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/server@npm:^11.10.0":
+"@emotion/server@npm:11.10.0":
   version: 11.10.0
   resolution: "@emotion/server@npm:11.10.0"
   dependencies:
@@ -216,7 +216,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/styled@npm:^11.10.6":
+"@emotion/styled@npm:11.10.6":
   version: 11.10.6
   resolution: "@emotion/styled@npm:11.10.6"
   dependencies:
@@ -363,7 +363,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/icons-material@npm:^5.11.16":
+"@mui/icons-material@npm:5.11.16":
   version: 5.11.16
   resolution: "@mui/icons-material@npm:5.11.16"
   dependencies:
@@ -379,7 +379,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/material@npm:^5.11.16":
+"@mui/material@npm:5.11.16":
   version: 5.11.16
   resolution: "@mui/material@npm:5.11.16"
   dependencies:
@@ -734,7 +734,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-three/fiber@npm:^8.12.0":
+"@react-three/fiber@npm:8.12.0":
   version: 8.12.0
   resolution: "@react-three/fiber@npm:8.12.0"
   dependencies:
@@ -904,7 +904,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/three@npm:^0.150.1":
+"@types/three@npm:0.150.1":
   version: 0.150.1
   resolution: "@types/three@npm:0.150.1"
   dependencies:
@@ -923,7 +923,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.57.1":
+"@typescript-eslint/eslint-plugin@npm:5.57.1":
   version: 5.57.1
   resolution: "@typescript-eslint/eslint-plugin@npm:5.57.1"
   dependencies:
@@ -947,7 +947,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.42.0, @typescript-eslint/parser@npm:^5.57.1":
+"@typescript-eslint/parser@npm:5.57.1, @typescript-eslint/parser@npm:^5.42.0":
   version: 5.57.1
   resolution: "@typescript-eslint/parser@npm:5.57.1"
   dependencies:
@@ -1755,7 +1755,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^8.8.0":
+"eslint-config-prettier@npm:8.8.0":
   version: 8.8.0
   resolution: "eslint-config-prettier@npm:8.8.0"
   peerDependencies:
@@ -1859,7 +1859,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-prettier@npm:^4.2.1":
+"eslint-plugin-prettier@npm:4.2.1":
   version: 4.2.1
   resolution: "eslint-plugin-prettier@npm:4.2.1"
   dependencies:
@@ -2439,29 +2439,29 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "hyperrtls-dashboard@workspace:."
   dependencies:
-    "@emotion/cache": ^11.10.7
-    "@emotion/react": ^11.10.6
-    "@emotion/server": ^11.10.0
-    "@emotion/styled": ^11.10.6
-    "@mui/icons-material": ^5.11.16
-    "@mui/material": ^5.11.16
+    "@emotion/cache": 11.10.7
+    "@emotion/react": 11.10.6
+    "@emotion/server": 11.10.0
+    "@emotion/styled": 11.10.6
+    "@mui/icons-material": 5.11.16
+    "@mui/material": 5.11.16
     "@react-three/drei": 9.50.3
-    "@react-three/fiber": ^8.12.0
+    "@react-three/fiber": 8.12.0
     "@types/node": 18.15.11
     "@types/react": 18.0.33
     "@types/react-dom": 18.0.11
-    "@types/three": ^0.150.1
-    "@typescript-eslint/eslint-plugin": ^5.57.1
-    "@typescript-eslint/parser": ^5.57.1
+    "@types/three": 0.150.1
+    "@typescript-eslint/eslint-plugin": 5.57.1
+    "@typescript-eslint/parser": 5.57.1
     eslint: 8.38.0
     eslint-config-next: 13.3.0
-    eslint-config-prettier: ^8.8.0
-    eslint-plugin-prettier: ^4.2.1
+    eslint-config-prettier: 8.8.0
+    eslint-plugin-prettier: 4.2.1
     next: 13.3.0
-    prettier: ^2.8.7
+    prettier: 2.8.7
     react: 18.2.0
     react-dom: 18.2.0
-    three: ^0.151.3
+    three: 0.151.3
     typescript: 5.0.4
   languageName: unknown
   linkType: soft
@@ -3378,7 +3378,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.8.7":
+"prettier@npm:2.8.7":
   version: 2.8.7
   resolution: "prettier@npm:2.8.7"
   bin:
@@ -3996,7 +3996,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"three@npm:^0.151.3":
+"three@npm:0.151.3":
   version: 0.151.3
   resolution: "three@npm:0.151.3"
   checksum: cb6f10e4e409bbc4677d2128470c4e0bdb29f7879a77bc800180e30bda3527816c45b47ac10228f346cfc7501234457f63a87c1bdd5c3b6e2841d523e5d6eb79
