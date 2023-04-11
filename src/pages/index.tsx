@@ -31,9 +31,14 @@ function tagsReducer(state: Tags, action: TagsAction) {
 type HomeProps = {
   anchors: Anchors;
   tags: Tags;
+  tagsEventSourceUrl: URL;
 };
 
-export default function Home({ anchors, ...props }: HomeProps) {
+export default function Home({
+  anchors,
+  tagsEventSourceUrl,
+  ...props
+}: HomeProps) {
   const [tags, tagsDispatch] = React.useReducer(tagsReducer, props.tags);
 
   const onPositionEvent = React.useCallback((event: MessageEvent) => {
@@ -45,19 +50,14 @@ export default function Home({ anchors, ...props }: HomeProps) {
   }, []);
 
   React.useEffect(() => {
-    const eventSourceUrl = new URL(
-      '/devices/tags/_events?eventTypes=position',
-      process.env.NEXT_PUBLIC_API_BASE_URL || '',
-    );
-
-    const eventSource = new EventSource(eventSourceUrl);
+    const eventSource = new EventSource(tagsEventSourceUrl);
     eventSource.addEventListener('position', onPositionEvent);
 
     return () => {
       eventSource.removeEventListener('position', onPositionEvent);
       eventSource.close();
     };
-  }, [onPositionEvent]);
+  }, [onPositionEvent, tagsEventSourceUrl]);
 
   return <LiveView anchors={anchors} tags={tags} />;
 }
@@ -66,11 +66,11 @@ Home.title = 'Dashboard';
 
 export async function getServerSideProps() {
   const anchors = await fetch(
-    new URL('/devices/anchors', process.env.NEXT_PUBLIC_API_BASE_URL || ''),
+    new URL('devices/anchors', process.env.SERVER_API_URL!),
   ).then<AnchorsResponse>((res) => res.json());
 
   const tags = await fetch(
-    new URL('/devices/tags', process.env.NEXT_PUBLIC_API_BASE_URL || ''),
+    new URL('devices/tags', process.env.SERVER_API_URL!),
   ).then<TagsResponse>((res) => res.json());
 
   const transformedTags: Tags = tags.map((tag) => {
@@ -83,5 +83,12 @@ export async function getServerSideProps() {
     };
   });
 
-  return { props: { anchors, tags: transformedTags } as HomeProps };
+  const tagsEventSourceUrl = new URL(
+    'devices/tags/_events?eventTypes=position',
+    process.env.CLIENT_API_URL!,
+  );
+
+  return {
+    props: { anchors, tags: transformedTags, tagsEventSourceUrl } as HomeProps,
+  };
 }
