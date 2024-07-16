@@ -47,7 +47,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-config-prettier", "virtual:c4369338592708f2b29f175af67e2f16a8f0121ea69a5021af16950bae33c7c252bde4e1264015bd5de71df0ed3dff825becbe306730446c81c117ae6890c660#npm:8.8.0"],\
             ["eslint-plugin-prettier", "virtual:c4369338592708f2b29f175af67e2f16a8f0121ea69a5021af16950bae33c7c252bde4e1264015bd5de71df0ed3dff825becbe306730446c81c117ae6890c660#npm:4.2.1"],\
             ["next", "virtual:c4369338592708f2b29f175af67e2f16a8f0121ea69a5021af16950bae33c7c252bde4e1264015bd5de71df0ed3dff825becbe306730446c81c117ae6890c660#npm:13.3.0"],\
-            ["prettier", "npm:2.8.7"],\
+            ["prettier", "npm:3.3.3"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:c4369338592708f2b29f175af67e2f16a8f0121ea69a5021af16950bae33c7c252bde4e1264015bd5de71df0ed3dff825becbe306730446c81c117ae6890c660#npm:18.2.0"],\
             ["three", "npm:0.151.3"],\
@@ -2654,7 +2654,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/prettier", null],\
             ["eslint", "npm:8.38.0"],\
             ["eslint-config-prettier", "virtual:c4369338592708f2b29f175af67e2f16a8f0121ea69a5021af16950bae33c7c252bde4e1264015bd5de71df0ed3dff825becbe306730446c81c117ae6890c660#npm:8.8.0"],\
-            ["prettier", "npm:2.8.7"],\
+            ["prettier", "npm:3.3.3"],\
             ["prettier-linter-helpers", "npm:1.0.0"]\
           ],\
           "packagePeers": [\
@@ -3293,7 +3293,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-config-prettier", "virtual:c4369338592708f2b29f175af67e2f16a8f0121ea69a5021af16950bae33c7c252bde4e1264015bd5de71df0ed3dff825becbe306730446c81c117ae6890c660#npm:8.8.0"],\
             ["eslint-plugin-prettier", "virtual:c4369338592708f2b29f175af67e2f16a8f0121ea69a5021af16950bae33c7c252bde4e1264015bd5de71df0ed3dff825becbe306730446c81c117ae6890c660#npm:4.2.1"],\
             ["next", "virtual:c4369338592708f2b29f175af67e2f16a8f0121ea69a5021af16950bae33c7c252bde4e1264015bd5de71df0ed3dff825becbe306730446c81c117ae6890c660#npm:13.3.0"],\
-            ["prettier", "npm:2.8.7"],\
+            ["prettier", "npm:3.3.3"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:c4369338592708f2b29f175af67e2f16a8f0121ea69a5021af16950bae33c7c252bde4e1264015bd5de71df0ed3dff825becbe306730446c81c117ae6890c660#npm:18.2.0"],\
             ["three", "npm:0.151.3"],\
@@ -4357,10 +4357,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["prettier", [\
-        ["npm:2.8.7", {\
-          "packageLocation": "./.yarn/cache/prettier-npm-2.8.7-1962ac9483-fdc8f2616f.zip/node_modules/prettier/",\
+        ["npm:3.3.3", {\
+          "packageLocation": "./.yarn/unplugged/prettier-npm-3.3.3-e811f023f3/node_modules/prettier/",\
           "packageDependencies": [\
-            ["prettier", "npm:2.8.7"]\
+            ["prettier", "npm:3.3.3"]\
           ],\
           "linkType": "HARD"\
         }]\
