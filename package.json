@@ -15,7 +15,7 @@
     "@emotion/react": "11.10.6",
     "@emotion/server": "11.10.0",
     "@emotion/styled": "11.10.6",
-    "@mui/icons-material": "5.11.16",
+    "@mui/icons-material": "6.1.4",
     "@mui/material": "5.11.16",
     "@react-three/drei": "9.50.3",
     "@react-three/fiber": "8.12.0",
